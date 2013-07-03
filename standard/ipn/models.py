@@ -38,4 +38,4 @@ class PayPalIPN(PayPalStandardBase):
             elif self.is_subscription_end_of_term():
                 subscription_eot.send(sender=self)
             elif self.is_subscription_modified():
-                subscription_modify.send(sender=self)            
+                subscription_modify.send(sender=self)

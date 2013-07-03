@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 from django.views.decorators.http import require_GET
 from paypal.standard.pdt.models import PayPalPDT
 from paypal.standard.pdt.forms import PayPalPDTForm
- 
+from django.http import HttpResponseRedirect
  
 @require_GET
 def pdt(request, item_check_callable=None, template="pdt/pdt.html", context=None):
@@ -46,5 +46,9 @@ def pdt(request, item_check_callable=None, template="pdt/pdt.html", context=None
     else:
         pass # we ignore any PDT requests that don't have a transaction id
  
-    context.update({"failed":failed, "pdt_obj":pdt_obj})
-    return render_to_response(template, context, RequestContext(request))
+    request.session['pdt_obj'] = pdt_obj
+
+    return HttpResponseRedirect('/introkick/home')
+
+    # context.update({"failed":failed, "pdt_obj":pdt_obj})
+    # return render_to_response(template, context, RequestContext(request))

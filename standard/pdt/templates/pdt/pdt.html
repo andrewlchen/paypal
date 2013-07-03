@@ -1,5 +1,6 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends 'introkick/nav.html' %}
+
+{% block paypal_pdt %}
 
 {% ifequal pdt_obj.st 'SUCCESS' %}
 <h1>Transaction complete</h1>
@@ -19,8 +20,8 @@
 {% else %}	
 <h1>Transaction Failed</h1>
 <p>Sorry transaction failed, please try a different form of payment</p>	
-{% endifequal %}		
+{% endifequal %}
 
-{% endblock %}
+{% endblock paypal_pdt %}
 
 
