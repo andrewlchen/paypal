@@ -7,7 +7,7 @@ from paypal.standard.pdt.models import PayPalPDT
 from paypal.standard.pdt.forms import PayPalPDTForm
 from django.http import HttpResponseRedirect
  
-# @require_GET
+@require_GET
 def pdt(request, item_check_callable=None, template="pdt/pdt.html", context=None):
     """Payment data transfer implementation: http://tinyurl.com/c9jjmw"""
     context = context or {}
