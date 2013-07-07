@@ -6,6 +6,7 @@ from django.views.decorators.http import require_GET
 from paypal.standard.pdt.models import PayPalPDT
 from paypal.standard.pdt.forms import PayPalPDTForm
 from django.http import HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt 
 @require_GET
