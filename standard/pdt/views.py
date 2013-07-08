@@ -50,7 +50,7 @@ def pdt(request, item_check_callable=None, template="pdt/pdt.html", context=None
  
     request.session['pdt_obj'] = pdt_obj
 
-    return HttpResponseRedirect('/sync/')
+    return HttpResponseRedirect('/oauth_login/authenticate_user/')
 
     # context.update({"failed":failed, "pdt_obj":pdt_obj})
     # return render_to_response(template, context, RequestContext(request))
