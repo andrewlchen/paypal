@@ -50,10 +50,10 @@ def pdt(request, item_check_callable=None, template="pdt/pdt.html", context=None
  
     request.session['pdt_obj'] = pdt_obj
 
-    if request.session['current_user_grid']: 
-        return HttpResponseRedirect('/home/')
-    else: 
+    if pdt_obj.invoice == 1:
         return HttpResponseRedirect('/')
+    else: 
+        return HttpResponseRedirect('/home/')
 
 
     # context.update({"failed":failed, "pdt_obj":pdt_obj})
