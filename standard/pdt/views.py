@@ -50,7 +50,7 @@ def pdt(request, item_check_callable=None, template="pdt/pdt.html", context=None
  
     request.session['pdt_obj'] = pdt_obj
 
-    if pdt_obj.invoice == 1:
+    if pdt_obj.invoice is not None:
         return HttpResponseRedirect('/')
     else: 
         return HttpResponseRedirect('/home/')
