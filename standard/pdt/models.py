@@ -51,7 +51,7 @@ class PayPalPDT(PayPalStandardBase):
         if settings.DEBUG:
             return SANDBOX_POSTBACK_ENDPOINT
         else:
-            return SANDBOX_POSTBACK_ENDPOINT
+            return POSTBACK_ENDPOINT
     
     def _verify_postback(self):
         # ### Now we don't really care what result was, just whether a flag was set or not.
